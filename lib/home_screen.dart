@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Positioned(
               bottom: 300,
-              left: 60,
+              left: 30,
               child: Text(
                 'Solar System',
                 style: TextStyle(color: Colors.white, fontSize: 16),
