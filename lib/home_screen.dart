@@ -1,4 +1,6 @@
 import 'package:cosmico/earth.dart';
+import 'package:cosmico/fav_screen.dart';
+import 'package:cosmico/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,8 +12,37 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Navigate to the appropriate screen based on the index
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => fav_screen()),
+        );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+        );
+        break;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -189,29 +220,33 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              bottom: 10,
-              left: 50,
-              child: InkWell(
-                onTap: () {},
-                child: Image.asset('assets/Frame2.png'),
+              bottom: 0.2, // Adjust as needed to move the bar above the screen edge
+              left: 0.2, // Add padding on the left
+              right: 0.2, // Add padding on the right
+              child: Container(
+                height: 74 ,
+
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.4), // Semi-transparent background
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: BottomNavigationBar(
+                  backgroundColor: Colors.transparent, // Keep the bar itself transparent
+                  elevation: 0, // Remove shadow
+                  items: [
+                    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                    BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourites'),
+                    BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'more'),
+                  ],
+                  currentIndex: _selectedIndex,
+                  selectedItemColor: Colors.white,
+                  unselectedItemColor: Colors.grey,
+                  onTap: _onItemTapped,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 10,
-              left: 160,
-              child: InkWell(
-                onTap: () {},
-                child: Image.asset('assets/Frame3.png'),
-              ),
-            ),
-            Positioned(
-              bottom: 10,
-              left: 270,
-              child: InkWell(
-                onTap: () {},
-                child: Image.asset('assets/Frame3(1).png'),
-              ),
-            ),
+
+
+            )
           ],
         ),
       ),

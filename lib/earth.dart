@@ -1,3 +1,5 @@
+import 'package:cosmico/fav_screen.dart';
+import 'package:cosmico/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class Earth extends StatefulWidget {
@@ -14,6 +16,7 @@ class _EarthState extends State<Earth> {
         child: Scaffold(
       body: Stack(
         children: [
+
           Image.asset(
             'assets/Component1.png',
             fit: BoxFit.cover,
@@ -58,12 +61,47 @@ class _EarthState extends State<Earth> {
             
           )),
           Positioned(
-              top: 688,
-              left: 180,
+            top: 688,
+            left: 180,
+            child: GestureDetector(onTap: (){},
               child: Text(
                 'Visit',
                 style: TextStyle(fontSize: 24, color: Colors.white),
-              )),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 20,
+            top: 30,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: Container(padding: EdgeInsets.all(16),
+
+
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(70),
+                  color: Colors.black.withOpacity(0.5),),
+                child: Icon(Icons.arrow_back, color: Colors.white,) ,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 310,
+            top: 30,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> fav_screen()));
+              },
+              child: Container(padding: EdgeInsets.all(16),
+
+
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(70),
+                  color: Colors.black.withOpacity(0.5),),
+                child: Icon(Icons.favorite_border_outlined, color: Colors.white,) ,
+              ),
+            ),
+          ),
 
           // Positioned(
           //     top: 10,

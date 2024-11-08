@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 // import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// final Uri _url = Uri.parse('https://www.twitter.com');
-// final Uri _url2 = Uri.parse('https://www.facebook.com');
-// final Uri _url3 = Uri.parse('https://www.google.com');
+final Uri _url = Uri.parse('https://www.twitter.com');
+final Uri _url2 = Uri.parse('https://www.facebook.com');
+final Uri _url3 = Uri.parse('https://www.google.com');
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -174,17 +174,19 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 //
 // Future<void> _launchUrl() async {
-//   if (!await launchUrl(_url)) {
+//   if (!await _launchUrl(_url)) {
 //     throw Exception('Could not launch $_url');
 //   }
 // }
 // Future<void> _launchUrl2() async {
-//   if (!await launchUrl(_url2)) {
+//   if (!await _launchUrl(_url2)) {
 //     throw Exception('Could not launch $_url');
 //   }
 // }
 // Future<void> _launchUrl3() async {
-//   if (!await launchUrl(_url3)) {
+//   if (!await _launchUrl(_url3)) {
 //     throw Exception('Could not launch $_url');
 //   }
 // }
+//
+//
