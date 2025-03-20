@@ -1,16 +1,15 @@
-# cosmico
+🌌 Cosmico
+Cosmico is a beautifully designed Flutter app that provides fascinating knowledge about planets in our solar system. With an intuitive UI, users can explore details about different planets and add their favorite ones to a personalized favorites list. Currently, the app features only the UI, with functionality to be added in future updates.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+✨ Features (UI Only)
+🌍 Explore detailed planet information
+⭐ Add planets to favorites
+🎨 Smooth and visually appealing design
+🚀 Future Enhancements
+🛰️ Fetch real-time planetary data
+🔭 Interactive 3D planet models
+📌 Save favorites with persistent storage
+🛠 Tech Stack
+Flutter (Dart)
+Custom UI Design
+Feel free to contribute and help bring Cosmico to life! 🌠
